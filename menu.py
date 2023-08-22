@@ -2,7 +2,6 @@ from logo import logo
 import os
 
 def menu ():
-    #logo()
     exit_program=False
     while exit_program!=True:
         os.system('cls')
@@ -63,8 +62,77 @@ def menu ():
                         exit_menu=True
                 elif choice==0:
                     exit_main_menu=True
-        #elif choice==2: for admin
-            
+        elif choice==2:
+            os.system('cls')
+            password=int(input("If you administrator,please enter your password: "))
+            if password==1234:
+               exit_main_menu=False
+               while exit_main_menu!=True:
+                  os.system('cls')
+                  print("======================PyStream======================")
+                  print(f"Hello administrator {username}!\nAdministrator {username} please, select what you need: ")
+                  choice=int(input("\n1.Show store\n2.Search\n3.Add new object\n4.Edit object\n5.Delete object\n0.Exit\n"))
+                  if choice==1:
+                    exit_menu=False
+                    while exit_menu!=True:
+                      os.system('cls')
+                      print("Hello!")
+                      #ShowMovie def
+                      select=int(input("\n0.Go back\n"))
+                      if select==0:
+                        exit_menu=True
+                  elif choice==2:
+                    exit_menu=False
+                    while exit_menu!=True:
+                      os.system('cls')
+                      choice=int(input("Search by: \n1.Name;\n2.Genre;\n3.Country of production;\n4.Year of production;\n0.Go back\n"))
+                      if choice==1:
+                         os.system('cls')
+                         ##Searchbyname def
+                      elif choice==2:
+                         os.system('cls')
+                         ##Searchbygenre def
+                      elif choice==3:
+                         os.system('cls')
+                         ##Searchbycountry def
+                      elif choice==4:
+                         os.system('cls')
+                         ##Searchbyyear def
+                      elif choice==0:
+                        exit_menu=True
+                  elif choice==3:
+                    exit_menu=False
+                    while exit_menu!=True:
+                      os.system('cls')
+                      #AddMovie
+                      select=int(input("Object has been added!\n0.Go back\n"))
+                      if select==0:
+                        exit_menu=True
+                  elif choice==4:
+                    exit_menu=False
+                    while exit_menu!=True:
+                      os.system('cls')
+                      #EditMovie
+                      select=int(input("Editing was successful!\n0.Go back\n"))
+                      if select==0:
+                        exit_menu=True
+                  elif choice==5:
+                    exit_menu=False
+                    while exit_menu!=True:
+                      os.system('cls')
+                      deletingID=(input("Administrator, enter ID of object you want to delete: "))
+                      #DeleteMovie
+                      select=int(input("Deletion was successful!\n0.Go back\n"))
+                      if select==0:
+                        exit_menu=True
+                  elif choice==0:
+                    exit_main_menu=True
+            else:
+               exit_menu=False
+               while exit_menu!=True:
+                  select=int(input(print("The password is incorrect! Try again!\n0.Exit")))
+                  if select==0:
+                        exit_menu=True
         elif choice==0:
             exit_program=True
 
