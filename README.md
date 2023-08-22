@@ -1,11 +1,11 @@
-# Examination work on programming
-## Topic: Create a functional streaming service application "CppStream".
+# Examination work on programming (Python programming language)
+## Topic: Create a functional streaming service application "PyStream".
 
 The main task is to provide the user with the ability to save information about multimedia data (movies, serials, cartoon's, anime).
 
 ## Завдання
 
-### Створити функціонал додатку "Стрімінговий сервіс CppStream".
+### Створити функціонал додатку "Стрімінговий сервіс PyStream".
 
 Основне завдання - надати користувачу можливість зберігати інформацію про мультимедійні дані (фільми, серіали, мультсеріали, аніме і т.п.).
 
