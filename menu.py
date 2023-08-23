@@ -1,7 +1,9 @@
 from logo import logo
 import os
+from lib import *
 
 def menu ():
+    create_database(csvreader, database)
     exit_program=False
     while exit_program!=True:
         os.system('cls')
@@ -23,7 +25,7 @@ def menu ():
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
-                      print("Hello!")
+                      show_store(database)
                       #ShowMovie def
                       select=int(input("\n0.Go back\n"))
                       if select==0:
@@ -35,15 +37,19 @@ def menu ():
                       choice=int(input("Search by: \n1.Name;\n2.Genre;\n3.Country of production;\n4.Year of production;\n0.Go back\n"))
                       if choice==1:
                          os.system('cls')
+                         search_name(database)
                          ##Searchbyname def
                       elif choice==2:
                          os.system('cls')
+                         search_genre(database)
                          ##Searchbygenre def
                       elif choice==3:
                          os.system('cls')
+                         search_country(database)
                          ##Searchbycountry def
                       elif choice==4:
                          os.system('cls')
+                         search_year(database)
                          ##Searchbyyear def
                       elif choice==0:
                         exit_menu=True  
@@ -76,35 +82,39 @@ def menu ():
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
-                      print("Hello!")
+                      show_store(database)
                       #ShowMovie def
                       select=int(input("\n0.Go back\n"))
                       if select==0:
                         exit_menu=True
                   elif choice==2:
-                    exit_menu=False
-                    while exit_menu!=True:
+                     exit_menu=False
+                     while exit_menu!=True:
                       os.system('cls')
                       choice=int(input("Search by: \n1.Name;\n2.Genre;\n3.Country of production;\n4.Year of production;\n0.Go back\n"))
                       if choice==1:
                          os.system('cls')
+                         search_name(database)
                          ##Searchbyname def
                       elif choice==2:
                          os.system('cls')
+                         search_genre(database)
                          ##Searchbygenre def
                       elif choice==3:
                          os.system('cls')
+                         search_country(database)
                          ##Searchbycountry def
                       elif choice==4:
                          os.system('cls')
+                         search_year(database)
                          ##Searchbyyear def
                       elif choice==0:
-                        exit_menu=True
+                        exit_menu=True  
                   elif choice==3:
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
-                      #AddMovie
+                      add_item(database)
                       select=int(input("Object has been added!\n0.Go back\n"))
                       if select==0:
                         exit_menu=True
@@ -113,6 +123,7 @@ def menu ():
                     while exit_menu!=True:
                       os.system('cls')
                       #EditMovie
+                      edit_item(database)
                       select=int(input("Editing was successful!\n0.Go back\n"))
                       if select==0:
                         exit_menu=True
@@ -120,8 +131,8 @@ def menu ():
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
-                      deletingID=(input("Administrator, enter ID of object you want to delete: "))
                       #DeleteMovie
+                      delete_item(database)
                       select=int(input("Deletion was successful!\n0.Go back\n"))
                       if select==0:
                         exit_menu=True
@@ -135,6 +146,7 @@ def menu ():
                         exit_menu=True
         elif choice==0:
             exit_program=True
+        write_file(database)
 
 
 
