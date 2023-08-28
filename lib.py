@@ -71,8 +71,8 @@ def show_store(database):
 
 def show_item(item):
 
-    print(f"{item[0]}.Name: {item[1]}\nType: {item[2]}\nGenre: {item[3]}\nCountry: {item[4]}")
-    print(f"Year of production:{item[5]}\nSeasons: {item[6]}\nSeries: {item[7]}\nTime: {item[8]}\nPlot: {item[9]}\nID: {item[10]}\n")
+    print(f"{item[0]}.Name: {item[1]}\n  Type: {item[2]}\n  Genre: {item[3]}\n  Country: {item[4]}")
+    print(f"  Year of production:{item[5]}\n  Seasons: {item[6]}\n  Series: {item[7]}\n  Time: {item[8]}\n  Plot: {item[9]}\n  ID: {item[10]}\n")
 
 
 # Function for add new object in database (menu 2.3)
@@ -81,9 +81,12 @@ def add_item(database):
 
     i = 0
 
+    id = 0
+
     for item in database:
 
         i+=1
+        id+=5
 
     number = str(i+1)
 
@@ -105,7 +108,9 @@ def add_item(database):
 
     plot = input(f"Write {name} plot: ")
 
-    id = input(f"Write {name} ID: ")
+    id = str(id+10)
+
+    #special_id(database)
 
     item = [number, name, type, genre, country, year, seasons, series, time, plot, id]
 
@@ -259,10 +264,34 @@ def search_year(database):
             print(f"There are no object with genre {search_year}")
     os.system('pause') 
 
-# def search_by_countries(csv_file, country):
- #   for row in csv_file:
-  #      if country in row:
-   #         print(row)
+# Function for actual numbering objects    
+
+def numbering(database):
+    i=1
+    for item in database:
+        item[0]=i
+        i+=1
+
+# Function for unrepeatability objects ID
+
+def special_id(database):
+    for item in database:
+        for id in item:
+            while(item[10]==id):
+                if id==item[10]:
+                    print(f"ID\"{id}\" already use! Please, enter another one object ID:")
+                    id = input(f"Write ID: ")
+                elif id!=item[10]: 
+                    item[10]=id
+
+
+# def special_id(database):
+ #   while(item[10]==id):
+  #      for item in database:
+   #         if item[10]==id:
+    #            id=input(f"ID\"{id}\" already use! Please, enter another one object ID:")
+     #       else: 
+      #          item[10]=id    
 
         
 

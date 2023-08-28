@@ -25,6 +25,7 @@ def menu ():
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
+                      numbering(database)
                       show_store(database)
                       #ShowMovie def
                       select=int(input("\n0.Go back\n"))
@@ -82,6 +83,7 @@ def menu ():
                     exit_menu=False
                     while exit_menu!=True:
                       os.system('cls')
+                      numbering(database)
                       show_store(database)
                       #ShowMovie def
                       select=int(input("\n0.Go back\n"))
